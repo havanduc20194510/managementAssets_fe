@@ -1,96 +1,95 @@
-import React from 'react';
-import logo from '../../assets/logo.png';
-import "./index.css"
+import React from 'react'
+import logo from '../../../../assets/logo_admin.png'
+import './index.css'
 
-import { IoMdClock } from "react-icons/io";
-import { GrTechnology } from "react-icons/gr";
-import { FaRegClipboard, FaLayerGroup } from "react-icons/fa";
-import { HiOutlineUserGroup } from "react-icons/hi2";
-import { MdOutlineTableRows } from "react-icons/md";
-import { BsListCheck } from "react-icons/bs";
-import { TbCategory2 } from "react-icons/tb";
-import { IoStatsChartOutline } from "react-icons/io5";
-import { LuUser2 } from "react-icons/lu";
-import { IoSettingsOutline } from "react-icons/io5";
-import { RiShutDownLine } from "react-icons/ri";
-import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom';
+import { IoMdClock } from 'react-icons/io'
+import { GrTechnology } from 'react-icons/gr'
+import { FaRegClipboard, FaLayerGroup } from 'react-icons/fa'
+import { HiOutlineUserGroup } from 'react-icons/hi2'
+import { MdOutlineTableRows } from 'react-icons/md'
+import { BsListCheck } from 'react-icons/bs'
+import { TbCategory2 } from 'react-icons/tb'
+import { IoSettingsOutline, IoStatsChartOutline } from 'react-icons/io5'
+import { LuUser2 } from 'react-icons/lu'
+import { RiShutDownLine } from 'react-icons/ri'
+import { Layout, Menu } from 'antd'
+import { Link } from 'react-router-dom'
 
 // const { Header, Content, Footer, Sider } = Layout;
-const { Sider } = Layout;
+const { Sider } = Layout
 const items = [
   {
     key: '1',
     icon: IoMdClock,
     decription: 'Dashboard',
-    path: '/',
+    path: '/admin/dashboard'
   },
   {
     key: '2',
     icon: GrTechnology,
     decription: 'Hardware list',
-    path: '/hardware',
+    path: '/hardware'
   },
   {
     key: '3',
     icon: FaLayerGroup,
     decription: 'Software list',
-    path: '/software',
+    path: '/software'
   },
   {
     key: '4',
     icon: BsListCheck,
     decription: 'Request list',
-    path: '/request',
+    path: '/request'
   },
   {
     key: '5',
     icon: MdOutlineTableRows,
     decription: 'Maintain list',
-    path: '/maintain',
+    path: '/maintain'
   },
   {
     key: '6',
     icon: LuUser2,
     decription: 'Employees',
-    path: '/employees',
+    path: '/employees'
   },
   {
     key: '7',
     icon: TbCategory2,
     decription: 'Category',
-    path: '/category',
+    path: '/category'
   },
   {
     key: '8',
     icon: FaRegClipboard,
     decription: 'Create asstes',
-    path: '/create-assets',
+    path: '/create-assets'
   },
   {
     key: '9',
     icon: HiOutlineUserGroup,
     decription: 'Contact',
-    path: '/contact',
+    path: '/contact'
   },
   {
     key: '10',
     icon: IoStatsChartOutline,
     decription: 'Statistical',
-    path: '/statistical',
+    path: '/statistical'
   },
   {
     key: '11',
     icon: IoSettingsOutline,
     decription: 'Setting',
-    path: '/setting',
+    path: '/setting'
   },
   {
     key: '12',
     icon: RiShutDownLine,
     decription: 'Logout',
-    path: '/logout',
-  },
+    path: '/logout'
+  }
 ]
 // .map((icon, index) => ({
 //   key: String(index + 1),
@@ -106,7 +105,6 @@ const items = [
 // }));
 
 const Sidebar = () => {
-
   return (
     <Layout hasSider className='w-1/5'>
       <Sider
@@ -116,18 +114,20 @@ const Sidebar = () => {
           position: 'fixed',
           left: 0,
           top: 0,
-          bottom: 0,
+          bottom: 0
         }}
         id='sidebar'
       >
-        <div className="demo-logo-vertical h-[70px]">
-          <Link to="/"><img src={logo} alt="logo" className="h-full" /></Link>
+        <div className='demo-logo-vertical h-[70px]'>
+          <Link to='/'>
+            <img src={logo} alt='logo' className='h-full' />
+          </Link>
         </div>
 
         {/* <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} items={pathSidebar} className='pl-10'/> */}
 
         {items.map((item, index) => (
-          <Menu theme="light" mode="inline" key={item.key} defaultSelectedKeys={['1']} className='px-10'>
+          <Menu theme='light' mode='inline' key={item.key} defaultSelectedKeys={['1']} className='px-10'>
             <Menu.Item icon={React.createElement(item.icon)} className='mx-2'>
               <Link to={item.path} key={index}>
                 {item.decription}
@@ -176,7 +176,7 @@ const Sidebar = () => {
           </Footer> */}
       {/* </Layout> */}
     </Layout>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

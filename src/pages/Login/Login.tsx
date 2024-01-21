@@ -6,7 +6,7 @@ import { useMutation } from '@tanstack/react-query'
 import { login } from 'src/apis/auth.api'
 import { isAxiosUnprocessableEntityError } from 'src/utils/utils'
 import { ReponseApi } from 'src/types/utils.type'
-import Input from 'src/components/Imput'
+import Input from 'src/components/Input'
 
 type FormData = Omit<Schema, 'confirm-password'>
 const loginSchema = schema.omit(['confirm_password'])
